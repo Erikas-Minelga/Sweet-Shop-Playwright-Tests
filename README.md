@@ -15,6 +15,12 @@
 
 <h3>Homepage tests</h3>
 
+<table>
+    <tr>
+        <th>Test case</th><th>Test data</th><th>Pre-conditions</th><th>Steps</th><th>Expected Results</th><th>Justification</th>
+    </tr>
+</table>
+
 <h3>Basket Page tests</h3>
 
 <h4>Form Validation tests</h4>
