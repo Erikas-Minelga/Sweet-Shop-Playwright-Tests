@@ -2,6 +2,10 @@
 
 <h2>About this project</h2>
 
+This project aims to provide QA Automation coverage for a dummy website called "Sweet Shop". This website has been chosen as it closely resembles a real website with a user base and it simulates most common bugs that can be found on websites, which have given many great ideas for the kind of automated testing to implement. This website also contains many different elements, such as authentication and forms, which have proven to be a great way to learn a QA Automation framework Playwright.
+
+Playwright was chosen as the framework due to its intuitive way of defining tests and automatic waiting for elements to load, which eliminates most if not all flaky tests.
+
 <h2>Running the scripts</h2>
 
 <ol>
@@ -18,6 +22,55 @@
 <table>
     <tr>
         <th>Test case</th><th>Test data</th><th>Pre-conditions</th><th>Steps</th><th>Expected Results</th>
+    </tr>
+    <tr>
+        <td>Homepage has the correct title</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>
+            <ol>
+                <li>Go to https://sweetshop.netlify.app/</li>
+                <li>Observe the title of the page</li>
+            </ol>
+        </td>
+        <td>Title of the page is 'Sweet Shop'</td>
+    </tr>
+    <tr>
+        <td>Browse sweets link functions correctly</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>
+            <ol>
+                <li>Go to https://sweetshop.netlify.app/</li>
+                <li>Click the Browse sweets link</li>
+            </ol>
+        </td>
+        <td>URL should now be 'https://sweetshop.netlify.app/sweets'. Heading of the page should say 'Browse sweets'</td>
+    </tr>
+    <tr>
+        <td>Most popular sweets appear on the homepage</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>
+            <ol>
+                <li>Go to https://sweetshop.netlify.app/</li>
+                <li>Check the Most popular sweets section</li>
+            </ol>
+        </td>
+        <td>4 cards appear under "Our most popular choice of retro sweets' heading. Each item has Add to Basket button and images load correctly.</td>
+    </tr>
+    <tr>
+        <td>Sweets, About, Login and Basket navbar links take user to the appropriate page</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>
+            For each of the following navbar links: 'Sweets', 'About', 'Login', 'Basket':
+            <ol>
+                <li>Go to https://sweetshop.netlify.app/</li>
+                <li>Click the navbar link currently testing with</li>
+            </ol>
+        </td>
+        <td>User is taken to the correct page, with the correct URL and page heading.</td>
     </tr>
 </table>
 

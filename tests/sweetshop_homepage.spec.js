@@ -33,29 +33,18 @@ test.describe('Homepage tests', () => {
         }
     });
 
-    test('Sweets navbar link', async({page}) => {
-        await page.getByRole('link', {name: "Sweets", exact: true}).click();
-        await expect(page.getByRole('heading', {name: "Browse sweets"}),'should have heading "Browse sweets"').toBeVisible();
-        await expect(page, 'should have URL "https://sweetshop.netlify.app/sweets"').toHaveURL('https://sweetshop.netlify.app/sweets');
-    });
+    [
+        {testingWith: 'Sweets', expectedHeading: 'Browse sweets', expectedUrl: 'https://sweetshop.netlify.app/sweets'},
+        {testingWith: 'About', expectedHeading: 'Sweet Shop Project', expectedUrl: 'https://sweetshop.netlify.app/about'},
+        {testingWith: 'Login', expectedHeading: 'Login', expectedUrl: 'https://sweetshop.netlify.app/login'},
+        {testingWith: '0 Basket', expectedHeading: 'Your Basket', expectedUrl: 'https://sweetshop.netlify.app/basket'}      //'0 Basket' because '0' is appended to the link label at this point in the flow
+    ].forEach(({testingWith, expectedHeading, expectedUrl}) => {
+        
+        test(`${testingWith} navbar link opens the right page`, async ({page}) => {
+            await page.getByRole('link', {name: testingWith, exact: true}).click();
+            await expect(page.getByRole('heading', {name: expectedHeading, exact: true}),`should have heading "${expectedHeading}"`).toBeVisible();
+            await expect(page, `should have URL "${expectedUrl}"`).toHaveURL(expectedUrl); 
+        });
 
-    test('About navbar link', async({page}) => {
-        await page.getByRole('link', {name: "About", exact: true}).click();
-        await expect(page.getByRole('heading', {name: "Sweet Shop Project"}),'should have heading "Sweet shop project"').toBeVisible();
-        await expect(page, 'should have URL "https://sweetshop.netlify.app/about"').toHaveURL('https://sweetshop.netlify.app/about');
-    });
-
-    test('Login navbar link', async({page}) => {
-        await page.getByRole('link', {name: "Login", exact: true}).click();
-        await expect(page.getByRole('heading', {name: "Login"}),'should have heading "Login"').toBeVisible();
-        await expect(page, 'should have URL "https://sweetshop.netlify.app/login"').toHaveURL('https://sweetshop.netlify.app/login');
-    });
-
-    test('Basket navbar link', async({page}) => {
-        await page.getByRole('link', {name: "Basket"}).click();
-        await expect(page.getByRole('heading', {name: "Your Basket", exact: true}),'should have "Basket" in the heading').toBeVisible(); 
-        await expect(page, 'should have URL "https://sweetshop.netlify.app/basket"').toHaveURL('https://sweetshop.netlify.app/basket');
     });
 });
-
-
