@@ -2,7 +2,7 @@
 
 <h2>About this project</h2>
 
-This project aims to provide QA Automation coverage for a dummy website called "Sweet Shop". This website has been chosen as it closely resembles a real website with a user base and it simulates most common bugs that can be found on websites, which have given many great ideas for the kind of automated testing to implement. This website also contains many different elements, such as authentication and forms, which have proven to be a great way to learn a QA Automation framework Playwright.
+This project aims to provide QA Automation coverage for a dummy website called <a href='https://sweetshop.netlify.app/'>Sweet Shop</a>. This website has been chosen as it closely resembles a real website with a user base and it simulates most common bugs that can be found on websites, which have given many great ideas for the kind of automated testing to implement. This website also contains many different elements, such as authentication and forms, which have proven to be a great way to learn a QA Automation framework Playwright.
 
 Playwright was chosen as the framework due to its intuitive way of defining tests and automatic waiting for elements to load, which eliminates most if not all flaky tests.
 
